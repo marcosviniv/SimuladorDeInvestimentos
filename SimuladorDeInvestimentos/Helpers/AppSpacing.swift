@@ -12,5 +12,5 @@ enum AppSpacing {
     static let headerIconSize: CGFloat = 100
     static let featureIconSize: CGFloat = 48
     static let buttonHeight: CGFloat = 64
-    static let topPadding: CGFloat = 100
+    static let topPadding: CGFloat = 50
 }

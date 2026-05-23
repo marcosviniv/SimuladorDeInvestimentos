@@ -2,6 +2,8 @@ import SwiftUI
 
 struct WelcomeView: View {
 
+    @StateObject private var simulatorViewModel = SimulatorViewModel()
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -13,7 +15,7 @@ struct WelcomeView: View {
                 .ignoresSafeArea()
 
                 ScrollView {
-                    VStack(alignment: .center, spacing: AppSpacing.contentSpacing) {
+                    VStack(alignment: .center, spacing: 20) {
                         RoundedRectangle(cornerRadius: AppSpacing.largeCornerRadius)
                             .fill(AppColors.primaryGreen)
                             .frame(width: AppSpacing.headerIconSize, height: AppSpacing.headerIconSize)
@@ -23,17 +25,20 @@ struct WelcomeView: View {
                                     .foregroundStyle(AppColors.iconForeground)
                             )
 
-                        Text("Simulador de Investimentos")
-                            .font(.system(size: 28, weight: .bold))
+                        Text("Simulador de\nInvestimentos")
+                            .font(.system(size: 32, weight: .bold))
                             .foregroundStyle(AppColors.primaryText)
+                            .lineSpacing(4)
                             .multilineTextAlignment(.center)
                             .frame(maxWidth: .infinity, alignment: .center)
 
-                        Text("Descubra quanto seus investimentos podem render com aportes mensais e juros compostos")
-                            .font(.system(size: 20, weight: .light))
+                        Text("Projete seus investimentos com aportes mensais e juros compostos.")
+                            .font(.system(size: 17, weight: .regular))
                             .foregroundStyle(AppColors.secondaryText)
+                            .lineSpacing(4)
                             .multilineTextAlignment(.center)
                             .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.horizontal, AppSpacing.screenPadding)
 
                         HStack(alignment: .top, spacing: AppSpacing.iconSpacing) {
                             RoundedRectangle(cornerRadius: AppSpacing.smallCornerRadius)
@@ -46,13 +51,14 @@ struct WelcomeView: View {
                                 )
 
                             VStack(alignment: .leading, spacing: AppSpacing.cardSpacing) {
-                                Text("Simulação Inteligente")
+                                Text("Planeje com clareza")
                                     .font(.system(size: 22, weight: .bold))
                                     .foregroundStyle(AppColors.primaryText)
 
-                                Text("Calcule projeções precisas com juros compostos")
-                                    .font(.system(size: 14, weight: .light))
+                                Text("Informe valores, prazo e taxa para visualizar uma projeção do investimento.")
+                                    .font(.system(size: 15, weight: .regular))
                                     .foregroundStyle(AppColors.secondaryText)
+                                    .lineSpacing(3)
                             }
                         }
                         .padding(AppSpacing.cardPadding)
@@ -66,20 +72,21 @@ struct WelcomeView: View {
                         .padding(.horizontal, AppSpacing.screenPadding)
 
                         VStack(alignment: .center, spacing: AppSpacing.cardSpacing) {
-                            Text("Pronto para começar?")
-                                .font(.system(size: 26, weight: .bold))
+                            Text("Vamos começar?")
+                                .font(.system(size: 24, weight: .bold))
                                 .foregroundStyle(AppColors.primaryText)
 
-                            Text("Configure sua simulação e descubra o potencial dos seus investimentos")
-                                .font(.system(size: 16, weight: .light))
+                            Text("Leva menos de um minuto para configurar sua simulação.")
+                                .font(.system(size: 16, weight: .regular))
                                 .foregroundStyle(AppColors.secondaryText)
+                                .lineSpacing(3)
                                 .multilineTextAlignment(.center)
 
                             NavigationLink {
-                                SimulatorView()
+                                SimulatorView(viewModel: simulatorViewModel, onTapCalculator: {})
                             } label: {
                                 HStack(spacing: AppSpacing.cardSpacing) {
-                                    Image(systemName: "checkmark.circle.fill")
+                                    Image(systemName: "arrow.right.circle.fill")
                                         .font(.system(size: 24, weight: .bold))
                                         .foregroundStyle(AppColors.iconForeground)
 
@@ -106,7 +113,7 @@ struct WelcomeView: View {
                         .cornerRadius(AppSpacing.largeCornerRadius)
                         .padding(.horizontal, AppSpacing.screenPadding)
                     }
-                    .padding(.top, AppSpacing.topPadding)
+                    .padding(.top, 32)
                     .padding(.bottom, AppSpacing.screenPadding)
                 }
             }
