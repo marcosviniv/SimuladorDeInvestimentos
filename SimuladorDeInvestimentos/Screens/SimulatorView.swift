@@ -33,7 +33,7 @@ struct SimulatorView: View {
                         
                         VStack(alignment: .leading, spacing: AppSpacing.contentSpacing) {
                             HStack {
-                                Image(systemName: "arrow.left.circle.fill")
+                                Image(systemName: "brazilianrealsign.circle.fill")
                                     .resizable()
                                     .frame(width: 24, height: 24)
                                     .foregroundColor(AppColors.primaryGreen)
@@ -66,7 +66,7 @@ struct SimulatorView: View {
                             }
                             
                             HStack {
-                                Image(systemName: "arrow.left.circle.fill")
+                                Image(systemName: "calendar.badge.plus")
                                     .resizable()
                                     .frame(width: 24, height: 24)
                                     .foregroundColor(AppColors.primaryGreen)
@@ -100,8 +100,8 @@ struct SimulatorView: View {
                             }
                             
                             HStack {
-                                Image(systemName: "arrow.left.circle.fill")
-                                    .resizable()
+                                Image(systemName: "percent")
+                                    .font(.system(size: 18, weight: .bold))
                                     .frame(width: 24, height: 24)
                                     .foregroundColor(AppColors.primaryGreen)
                                 
@@ -133,7 +133,7 @@ struct SimulatorView: View {
                             }
                             
                             HStack {
-                                Image(systemName: "arrow.left.circle.fill")
+                                Image(systemName: "clock.fill")
                                     .resizable()
                                     .frame(width: 24, height: 24)
                                     .foregroundColor(AppColors.primaryGreen)

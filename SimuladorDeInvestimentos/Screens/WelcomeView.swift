@@ -71,7 +71,7 @@ struct WelcomeView: View {
                         .cornerRadius(AppSpacing.largeCornerRadius)
                         .padding(.horizontal, AppSpacing.screenPadding)
 
-                        VStack(alignment: .center, spacing: AppSpacing.cardSpacing) {
+                        VStack(alignment: .center, spacing: AppSpacing.iconSpacing) {
                             Text("Vamos começar?")
                                 .font(.system(size: 24, weight: .bold))
                                 .foregroundStyle(AppColors.primaryText)
@@ -101,7 +101,7 @@ struct WelcomeView: View {
                                 .cornerRadius(AppSpacing.mediumCornerRadius)
                             }
                             .buttonStyle(.plain)
-                            .padding(.top, AppSpacing.cardSpacing)
+                            .padding(.top, AppSpacing.iconSpacing)
                         }
                         .padding(AppSpacing.cardPadding)
                         .frame(maxWidth: .infinity, alignment: .center)
