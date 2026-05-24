@@ -2,6 +2,12 @@
 
 Aplicativo iOS feito em SwiftUI para simular a evolução de um investimento com valor inicial, aportes mensais, taxa anual de juros e tempo em anos.
 
+## Screenshots
+
+| Tela Inicial | Simulação | Resultado |
+|---|---|---|
+| ![Tela inicial](docs/screenshots/welcome.png) | ![Tela de simulação](docs/screenshots/simulacao.png) | ![Tela de resultado](docs/screenshots/resultado.png) |
+
 ## Funcionalidades
 
 - Tela inicial com apresentação do simulador.
