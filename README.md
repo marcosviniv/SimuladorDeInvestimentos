@@ -4,9 +4,18 @@ Aplicativo iOS feito em SwiftUI para simular a evolução de um investimento com
 
 ## Screenshots
 
-| Tela Inicial | Simulação | Resultado |
-|---|---|---|
-| ![Tela inicial](docs/screenshots/welcome.png) | ![Tela de simulação](docs/screenshots/simulacao.png) | ![Tela de resultado](docs/screenshots/resultado.png) |
+<table>
+  <tr>
+    <th>Tela Inicial</th>
+    <th>Simulação</th>
+    <th>Resultado</th>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/welcome.png" width="250" alt="Tela inicial" /></td>
+    <td><img src="docs/screenshots/simulacao.png" width="250" alt="Tela de simulação" /></td>
+    <td><img src="docs/screenshots/resultado.png" width="250" alt="Tela de resultado" /></td>
+  </tr>
+</table>
 
 ## Funcionalidades
 
