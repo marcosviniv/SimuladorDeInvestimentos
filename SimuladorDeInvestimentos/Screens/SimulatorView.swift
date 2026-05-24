@@ -3,7 +3,7 @@ import SwiftUI
 struct SimulatorView: View {
     
     @ObservedObject var viewModel: SimulatorViewModel
-    let onTapCalculator: () -> Void
+    @State private var mostrarResultado = false
     
     var body: some View {
         ZStack {
@@ -60,7 +60,7 @@ struct SimulatorView: View {
                                 )
                                 .cornerRadius(AppSpacing.smallCornerRadius)
 
-                                Text("Valor que você já possui para invertir")
+                                Text("Valor que você já possui para investir")
                                     .font(.system(size: 14, weight: .semibold))
                                     .foregroundStyle(AppColors.secondaryText)
                             }
@@ -127,7 +127,7 @@ struct SimulatorView: View {
                                 )
                                 .cornerRadius(AppSpacing.smallCornerRadius)
 
-                                Text("Taxa anual esperada (ex: CDI, Tesouro Direto")
+                                Text("Taxa anual esperada (ex: CDI, Tesouro Direto)")
                                     .font(.system(size: 14, weight: .semibold))
                                     .foregroundStyle(AppColors.secondaryText)
                             }
@@ -167,7 +167,8 @@ struct SimulatorView: View {
                             }
                             
                             Button(action: {
-                                onTapCalculator()
+                                viewModel.calcularSimulacao()
+                                mostrarResultado = viewModel.resultado != nil
                             }, label: {
                                 HStack(spacing: AppSpacing.cardSpacing) {
                                     Image(systemName: "checkmark.circle.fill")
@@ -192,11 +193,16 @@ struct SimulatorView: View {
                 }
             }
         .toolbar(.hidden, for: .navigationBar)
+        .navigationDestination(isPresented: $mostrarResultado) {
+            if let resultado = viewModel.resultado {
+                ResultView(resultado: resultado)
+            }
+        }
     }
 }
 
 struct SimulatorView_Previews: PreviewProvider {
     static var previews: some View {
-        SimulatorView(viewModel: SimulatorViewModel(), onTapCalculator: {})
+        SimulatorView(viewModel: SimulatorViewModel())
     }
 }

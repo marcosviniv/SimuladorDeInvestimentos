@@ -83,7 +83,7 @@ struct WelcomeView: View {
                                 .multilineTextAlignment(.center)
 
                             NavigationLink {
-                                SimulatorView(viewModel: simulatorViewModel, onTapCalculator: {})
+                                SimulatorView(viewModel: simulatorViewModel)
                             } label: {
                                 HStack(spacing: AppSpacing.cardSpacing) {
                                     Image(systemName: "arrow.right.circle.fill")
